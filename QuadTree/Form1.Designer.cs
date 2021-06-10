@@ -167,6 +167,7 @@ namespace QuadTree {
             0,
             0,
             0});
+            this.numericUpDownColorTolerance.ValueChanged += new System.EventHandler(this.numericUpDownColorTolerance_ValueChanged);
             // 
             // numericUpDownDesiredRatio
             // 
@@ -185,6 +186,7 @@ namespace QuadTree {
             0,
             0,
             196608});
+            this.numericUpDownDesiredRatio.ValueChanged += new System.EventHandler(this.numericUpDownDesiredRatio_ValueChanged);
             // 
             // labelColorTolerance
             // 

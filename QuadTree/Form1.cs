@@ -141,8 +141,14 @@ namespace QuadTree {
                             pictureBox.Width = _img.Width * 900 / _img.Height;
                         }
                         else {
-                            pictureBox.Width = 1600;
-                            pictureBox.Height = _img.Height * 1600 / _img.Width;
+                            if (_img.Height * 1600 / _img.Width > 1000) {
+                                pictureBox.Width = 800;
+                                pictureBox.Height = _img.Height * 1600 / _img.Width / 2;
+                            }
+                            else {
+                                pictureBox.Width = 1600;
+                                pictureBox.Height = _img.Height * 1600 / _img.Width;
+                            }
                         }
                     }
                     else {
@@ -190,6 +196,16 @@ namespace QuadTree {
                 ButtonShowCompressed.Text = "Show compressed image";
             }
             
+        }
+
+        private void numericUpDownColorTolerance_ValueChanged(object sender, EventArgs e) {
+            _isGenerated = false;
+            buttonGenerate.Text = "Generate";
+        }
+
+        private void numericUpDownDesiredRatio_ValueChanged(object sender, EventArgs e) {
+            _isGenerated = false;
+            buttonGenerate.Text = "Generate";
         }
     }
 }
