@@ -13,7 +13,4 @@
 ## Output images
  The quad tree image is saved under the name "quadTreeBitmap.jpg" while the compressed image made using the tree is saved under "compressed.jpg".
 
-
-
-
-The program is not very optimised so it may take a while for pictures bigger than 1200x1200px
+>The program is not very optimised so it may take a while for pictures bigger than 1200x1200px
