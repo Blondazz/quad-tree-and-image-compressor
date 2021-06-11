@@ -4,6 +4,8 @@
  Points amount - Select how many random points the program will generate.
  
  Node capacity - How many points in a node until it splits into four.
+ 
+ Click start to get random points and their quad tree, Start moving points to start the random movement of points
 ## Image parameters
  Color tolerance - Sets the color tolerance for grouping colors Abs(r1,g1,b1 - r2,g2,b2 < tolerance) the bigger the tolerance the lesser nodes are made.
  
