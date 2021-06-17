@@ -61,6 +61,7 @@ namespace QuadTree {
                 float x2 = tree.Boundary.Center.X + tree.Boundary.HalfWidth;
                 float y1 = tree.Boundary.Center.Y;
                 float y2 = tree.Boundary.Center.Y;
+
                 graphics.DrawLine(pen, x1*scale, y1*scale, x2*scale, y2*scale);
                 x1 = tree.Boundary.Center.X;
                 x2 = tree.Boundary.Center.X;
@@ -84,6 +85,13 @@ namespace QuadTree {
                 float y1 = tree.Boundary.Center.Y;
                 float y2 = tree.Boundary.Center.Y;
                 graphics.DrawLine(pen, x1, y1, x2, y2);
+                // graphics.DrawLine(pen, tree.Boundary.DrawingPoint.X, tree.Boundary.DrawingPoint.Y,
+                //     tree.Boundary.DrawingPoint.X + tree.Boundary.Width,
+                //     tree.Boundary.DrawingPoint.Y + tree.Boundary.Height);
+                // graphics.DrawLine(pen, tree.Boundary.DrawingPoint.X, tree.Boundary.DrawingPoint.Y + tree.Boundary.Height,
+                //     tree.Boundary.DrawingPoint.X + tree.Boundary.Width,
+                //     tree.Boundary.DrawingPoint.Y );
+
                 x1 = tree.Boundary.Center.X;
                 x2 = tree.Boundary.Center.X;
                 y1 = tree.Boundary.Center.Y - tree.Boundary.Height/2;
@@ -96,6 +104,8 @@ namespace QuadTree {
                 DrawTree(tree.SouthWest, pictureBox, graphics);
                 DrawTree(tree.SouthEast, pictureBox, graphics);
             }
+
+           
         }
 
         public static Bitmap getCompressedImage(QuadTreeBitmap tree, Bitmap bitmap, int treeSide) {
@@ -135,6 +145,7 @@ namespace QuadTree {
                 using (var g = Graphics.FromImage(bitmap)) {
                     Bitmap bmp = tree.Bitmap;
                     g.DrawImage(bmp, tree.Boundary.DrawingPoint);
+                    tree.Bitmap = null;
                 }
                 return bitmap;
             }

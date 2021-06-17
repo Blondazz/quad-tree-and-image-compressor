@@ -60,6 +60,7 @@ namespace QuadTree {
             else {
                 colorGroups.Sort((a, b) => b.Count - a.Count);
                 _mainColor = colorGroups[0][0];
+                colorGroups.Clear();
                 using (var g = Graphics.FromImage(bmp)) {
                     g.FillRectangle(new SolidBrush(_mainColor), 0, 0, bmp.Width, bmp.Height);
                 }
